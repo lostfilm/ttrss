@@ -10,16 +10,16 @@ services:
       - ~/postgres/data/:/var/lib/postgresql/ # persist postgres data to ~/postgres/data/ on the host
     restart: always
     
-  service.rss:
+  service.ttrss:
     image: wangqiru/ttrss:latest
     container_name: ttrss
     expose:
       - 80
     environment:
-      - VIRTUAL_HOST=rss.example.com # please change to your own domain
+      - VIRTUAL_HOST=ttrss.example.com # please change to your own domain
       - LETSENCRYPT_HOST=rss.example.com # please change to your own domain
       - LETSENCRYPT_EMAIL=admin@example.com # please change to your own domain
-      - SELF_URL_PATH=https://rss.example.com/ # please change to your own domain
+      - SELF_URL_PATH=https://ttrss.example.com/ # please change to your own domain
       - DB_HOST=database.postgres
       - DB_PORT=5432
       - DB_NAME=ttrss
